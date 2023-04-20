@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MAUI_LoginflowDemo.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MAUI_LoginflowDemo"
+    xmlns:pages="clr-namespace:MAUI_LoginflowDemo.Views"
+    Shell.FlyoutBehavior="Flyout">
+
+    <ShellContent
+        Title="Loading"
+        ContentTemplate="{DataTemplate pages:LoadingPage}"
+        Route="LoadingPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:LoginPage}"
+        Route="LoginPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False" />
+
+    <FlyoutItem Title="Home">
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Test">
+        <ShellContent ContentTemplate="{DataTemplate pages:TestPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Profile">
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate pages:ProfilePage}" />
+    </FlyoutItem>
+
+    <!--<TabBar FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent Title="Test" ContentTemplate="{DataTemplate pages:TestPage}" />
+
+        <ShellContent Title="Profile" ContentTemplate="{DataTemplate pages:ProfilePage}" />
+    </TabBar>-->
+
+</Shell>
